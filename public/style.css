@@ -1,0 +1,409 @@
+/* Background Pattern */
+
+body {
+  background-image: url(//www.toptal.com/designers/subtlepatterns/patterns/symphony.png);
+  background-position: bottom;
+  animation: 4s linear 0s infinite bp;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes bp {
+  from {
+    background-position: 198px 0;
+  }
+
+  to {
+    background-position: 0 198px;
+  }
+}
+
+/* Score Tracker CSS*/
+
+.choice {
+  border-radius: 0.4em;
+  text-align: center;
+  width: 2.5em;
+  background-color: white;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+.section {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0.4em;
+  border: 2px solid #f8f8ff;
+}
+
+.score {
+  display: inline-block;
+  width: 33%;
+  grid-area: score;
+  text-align: center;
+  font-size: 2vw;
+  font-style: oblique;
+}
+
+.section p {
+  margin-left: 15px;
+}
+
+.ping {
+  margin: 2em 0;
+  text-align: center;
+  width: 40%;
+}
+
+.first_para {
+  text-align: center;
+  margin: 5px 10px;
+  font-size: 1.5vw;
+}
+
+.second_para {
+  grid-area: second_para;
+  text-align: center;
+  margin: 0;
+  padding: 1em 0;
+  font-size: 1vw;
+}
+
+.play_to {
+  text-align: center;
+  /* display: inline-block; */
+  font-size: 1vw;
+}
+
+.button1,
+.button3 {
+  box-shadow: 0px 1px 0px 0px #5e9e4a;
+  background: linear-gradient(to bottom, #1df2dd 5%, #6d9dab 100%);
+  background-color: #1df2dd;
+  border-radius: 15px;
+  border: 2px solid #6ddb95;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #697526;
+}
+
+.button1:hover,
+.button3:hover {
+  background: linear-gradient(to bottom, #03bef7 5%, #0bdecc 100%);
+  background-color: #03bef7;
+}
+
+.button1:active,
+.button3:active {
+  position: relative;
+  top: 1px;
+}
+
+.button2,
+.button4 {
+  box-shadow: 0px 1px 0px 0px #3dc21b;
+  background: linear-gradient(to bottom, #511fdb 5%, #38b3d9 100%);
+  background-color: #511fdb;
+  border-radius: 15px;
+  border: 2px solid #409992;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #11120c;
+}
+
+.button2:hover,
+.button4:hover {
+  background: linear-gradient(to bottom, #38b3d9 5%, #511fdb 100%);
+  background-color: #38b3d9;
+}
+
+.button2:active,
+.button4:active {
+  position: relative;
+  top: 1px;
+}
+
+.button5 {
+  box-shadow: 0px 1px 0px 0px #67eba5;
+  background: linear-gradient(to bottom, #ff0000 5%, #cca7a7 100%);
+  background-color: #ff0000;
+  border-radius: 15px;
+  border: 2px solid #d7dbdb;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #332c33;
+  width: 100%;
+}
+.button5:hover {
+  background: linear-gradient(to bottom, #cca7a7 5%, #ff0000 100%);
+  background-color: #cca7a7;
+}
+.button5:active {
+  position: relative;
+  top: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 2px solid #f8f8ff;
+}
+
+.select_play_to {
+  grid-area: select_play;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.p1_section {
+  display: inline-block;
+  grid-area: choose_p1;
+  text-align: center;
+  width: 33%;
+}
+
+.p2_section {
+  width: 33%;
+  display: inline-block;
+  grid-area: choose_p2;
+  text-align: center;
+}
+
+.middle {
+  display: block;
+}
+
+/* Nav CSS */
+
+.navbar {
+  padding: 0;
+  width: 100%;
+  background-color: #3E3E3B;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.nav-el {
+  display: inline;
+  float: left;
+  width: 20%;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.nav-link{
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.nav-el :hover:not(.active) {
+  background-color: #599c30;
+}
+
+.active {
+  background-color: #559dc3;
+}
+
+/* Table */
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 75%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.table {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.box {
+  display: block;
+  background: #fefefe;
+  width: 75%;
+  padding: 2em 0.2em 3em 0.2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border-radius: 25px;
+}
+
+#add {
+  display: block;
+  margin: 0 auto 2% 3%;
+  padding: 0.5% 2%;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+td {
+  height: 50px;
+}
+
+.head {
+  background-color: #4C586F;
+  color: white;
+}
+
+.data-row:nth-child(odd) {
+  background: #A2AAB0;
+}
+
+.data-row:nth-child(even) {
+  background: #EBECED;
+}
+
+tbody:first-child tr:first-child td:first-child {
+  border-radius: 25px 0 0 0;
+}
+
+tbody:first-child tr:first-child td:last-child {
+  border-radius: 0 25px 0 0;
+}
+
+tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 25px;
+}
+
+tbody:last-child tr:last-child td:last-child {
+  border-radius: 0 0 25px 0;
+}
+
+.winner {
+  background-color: rgba(110, 191, 133, 0.60);
+}
+
+.crud_btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* Modal Form */
+
+.add_modal, .edit_modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-image: url(//www.toptal.com/designers/subtlepatterns/patterns/symphony.png);
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.add_close, .edit_close {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-top: 10px;
+  background: #AB3E16;
+  border: none;
+  border-radius: 100%;
+  padding: 0 6px;
+}
+
+.add_close:hover,
+.edit_close:hover,
+.add_close:focus,
+.edit_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#add_form label,
+#edit_form label {
+  margin-top: 50px;
+}
+
+#add_form .input,
+#edit_form .input {
+  margin-top: 10px;
+  margin-bottom: 10px; 
+}
+
+.h1_form{
+  margin-left: 50px;
+}
+
+.submit{
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 0.5% 5%;
+}
+
+/* Pagination */
+.pagination li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination li.active_pag {
+  background-color: rgba(110, 191, 133, 0.60);
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination li:hover:not(.active_pag) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
