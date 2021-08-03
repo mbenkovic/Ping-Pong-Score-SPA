@@ -407,3 +407,101 @@ tbody:last-child tr:last-child td:last-child {
   background-color: #ddd;
   border-radius: 5px;
 }
+
+/* Game */
+
+#game{
+  display: none;
+  border: 2px solid #000;
+  background-color: #cccccc;
+  position: absolute;
+  margin :auto;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+}
+
+.home_box {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  background: #fefefe;
+  width: 75%;
+  padding: 0.5em 0.2em 1em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  border-radius: 25px;
+}
+
+.p1_section_game {
+  margin-right: 2em;
+  display: inline-block;
+  grid-area: choose_p1;
+  text-align: center;
+  width: 33%;
+}
+
+.p2_section_game {
+  margin-left: 2em;
+  width: 33%;
+  display: inline-block;
+  grid-area: choose_p2;
+  text-align: center;
+}
+
+.choice_game {
+  display: inline-block;
+  border-radius: 0.4em;
+  text-align: center;
+  width: 2.5em;
+  background-color: white;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+.p1_section_game, .p2_section_game {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5em;
+}
+
+.p1_section_game p, .p2_section_game p {
+  font-size: 2em;
+}
+
+.select_play_to_game {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.play_button {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1em;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 4%;
+}
+.play_button:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.play_button:active {
+	position:relative;
+	top:1px;
+}
