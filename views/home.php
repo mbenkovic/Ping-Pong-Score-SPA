@@ -27,4 +27,10 @@
 
 <canvas id="game" , width="800" , height="600"></canvas>
 
+<div class="home_box_rules">
+  <p>Player 1: use W to move up and S to move down <br />
+     Player 2: use upArrow to move up and downArrow to move down <br />
+  </p>
+</div>
+
 <script src="/ppsingle/js/game.js"></script>

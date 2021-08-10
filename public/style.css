@@ -436,6 +436,20 @@ tbody:last-child tr:last-child td:last-child {
   border-radius: 25px;
 }
 
+.home_box_rules {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  font-size: 20px;
+  display: block;
+  background: #fefefe;
+  width: 75%;
+  padding: 0.5em 0.2em 1em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 39%;
+  border-radius: 25px;
+}
+
 .p1_section_game {
   margin-right: 2em;
   display: inline-block;
