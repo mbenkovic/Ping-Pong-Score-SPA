@@ -1,5 +1,6 @@
 <?php
   include '../models/Player.php';
+  include '../error.php';
   $player = new Player();
   $result = $player->leaderboard();
 

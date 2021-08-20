@@ -1,6 +1,7 @@
 <?php
+  include '../error.php';
+
   class Player {
-    
     function findAll() {
       $db = new Mysqli;
       $db->connect('localhost','root','root','ping_pong');
@@ -86,5 +87,109 @@
       
       mysqli_query($db, "DELETE FROM games_played WHERE id=".$id) or die(mysqli_error($db));
     }
+
+    function register($data){
+      $db = new Mysqli;
+      $db->connect('localhost', 'root', 'root', 'ping_pong');
+
+      $msg = array();
+      $error = false;
+      $fname = $db -> real_escape_string($data['ime']);
+      $lname = $db -> real_escape_string($data['prezime']);
+      $email = $db -> real_escape_string($data['email']);
+      $psw = md5($db -> real_escape_string($data['password']));
+      
+      $result =  mysqli_query($db, "SELECT * FROM users WHERE email='".$email."'");
+      $row_count = mysqli_num_rows($result);
+
+      if ($row_count) {
+        $error = true;
+        $msg["type"] = 'failed';
+        $msg["msg"] = 'Email already exists!';
+      }
+
+      if (!$error) {
+        $token = sha1(uniqid());
+        mysqli_query($db, "INSERT INTO users (ime, prezime, email, password, token)
+        VALUES ('".$fname."', '".$lname."', '".$email."', '".$psw."', '".$token."')") or die(mysqli_error($db));
+        $msg["type"] = 'success';
+        $msg["msg"] = 'User registered successfully!';
+      }
+      echo json_encode($msg);
+    }
+
+    function login($data){
+      $db = new Mysqli;
+      $db->connect('localhost', 'root', 'root', 'ping_pong');
+
+      $msg = array();
+      $email = $data['email'];
+      $psw = md5($data['password']);
+
+      $result =  mysqli_query($db, "SELECT * FROM users WHERE email='".$email."' AND password='".$psw."'");
+      $row_count = mysqli_num_rows($result);
+      $user = array();
+      foreach ($result as $row) {
+        $user = $row;
+      }
+      
+      if ($row_count) {
+        $_SESSION['login_user'] = $email;
+        $_SESSION['ime'] = $user['ime'];
+        $_SESSION['prezime'] = $user['prezime'];
+        $_SESSION['token'] = $user['token'];
+        $_SESSION['user_name'] = $user['ime'].' '.$user['prezime'];
+        
+        $msg["type"] = 'success';
+        $msg["msg"] = 'Logged in as: '.$user['ime'].' '.$user['prezime'];
+        $msg["user"] = $email;
+        $msg["token"] = $user['token'];
+        $msg["user_name"] = $_SESSION['user_name'];
+        
+      } else {
+          $msg["type"] = 'failed';
+          $msg["msg"] = 'Incorrect email or password!';
+      }
+      echo json_encode($msg);
+    }
+
+    function checkPort($port){
+      $db = new Mysqli;
+      $db->connect('localhost', 'root', 'root', 'ping_pong');
+
+      $result =  mysqli_query($db, "SELECT * FROM available_ports WHERE port=".$port);
+      $row_count = mysqli_num_rows($result);
+      if ($row_count) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function addPort($user, $port) {
+      $db = new Mysqli;
+      $db->connect('localhost', 'root', 'root', 'ping_pong');
+
+      mysqli_query($db, "INSERT INTO available_ports (user, port) VALUES ('".$user."', ".$port.")") or die(mysqli_error($db));
+    }
+
+    function getPorts(){
+      $db = new Mysqli;
+      $db->connect('localhost','root','root','ping_pong');
+       
+      $result = mysqli_query($db, 'SELECT * FROM available_ports') or die(mysqli_error($db));
+
+      $ports = array();
+      foreach ($result as $row) {
+        $ports[] = $row;
+      }
+      return $ports;
+    }
+
+    function deletePort($port) {
+      $db = new Mysqli;
+      $db->connect('localhost','root','root','ping_pong');
+       
+      mysqli_query($db, "DELETE FROM available_ports WHERE port =".$port) or die(mysqli_error($db));
+    }
   }
-?>

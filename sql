@@ -1,3 +1,5 @@
+Some old queries that I just wanted to save.
+
 Leaderboard query {
 
 select players.ime as "ime", players.prezime as "prezime", count(case when p1_score > p2_score then p1_id else p2_id end) as "total" 

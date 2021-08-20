@@ -1,3 +1,6 @@
+  <?php
+  include '../error.php';
+  ?>
   <div class="ping_app">
     <section class="section">
       <img src="/ping-pong/public/Ping_Pong.jpg" class="ping">

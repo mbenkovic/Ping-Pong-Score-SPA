@@ -23,27 +23,70 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <ul class="navbar" id ="navbar">
-    <li class = "nav-el">
-      <a class = "nav-link" href="#home">Home</a>
+  <div id="logged_in">
+    <p id="logged_as"></p>
+    <button id="status">Check Status</button>
+    <button id="logout_btn">Log out</button>
+  </div>
+  
+  <ul class="navbar" id="navbar">
+    <li class="nav-el">
+      <a class="nav-link" href="#home">Home</a>
     </li>
-    <li class = "nav-el">
-      <a class = "nav-link" href="#players">Players</a>
+    <li class="nav-el">
+      <a class="nav-link" href="#players">Players</a>
     </li>
-    <li class = "nav-el">
-    <a class = "nav-link" href="#score_tracker">Ping Pong Score Tracker</a>
+    <li class="nav-el">
+    <a class="nav-link" href="#score_tracker">Ping Pong Score Tracker</a>
     </li>
-    <li class = "nav-el">
-      <a class = "nav-link" href="#games_played">Games Played</a>
+    <li class="nav-el">
+      <a class="nav-link" href="#games_played">Games Played</a>
     </li>
-    <li class = "nav-el">
-      <a class = "nav-link" href="#leaderboard">Leaderboard</a>
+    <li class="nav-el">
+      <a class="nav-link" href="#leaderboard">Leaderboard</a>
     </li>
   </ul>
-  
-  <div id="content"></div>
+  <div class="reglog" id="reglog">
+    <button id="register_btn">Register</button>
+    <button id="login_btn">Login</button>
+
+    <div class="form-popup" id="register">
+      <form method="POST" class="form-container" id="register_form">
+        <h1>Register</h1>
+        <label for="rfname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="rfname" id="rfname" required>
+
+        <label for="rlname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="rlname" id="rlname" required>
+        
+        <label for="remail"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="remail" id="remail" required>
+    
+        <label for="rpsw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="rpsw" id="rpsw" required>
+        <div id="reg_error"></div>
+        <button type="submit" class="btn">Register</button>
+        <button type="button" class="btn cancel" id="close_reg">Close</button>
+      </form>
+    </div>
+    <div class="form-popup" id="login">
+      <form method="POST" class="form-container" id="login_form">
+        <h1>Login</h1>
+    
+        <label for="lemail"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="lemail" id="lemail" required>
+    
+        <label for="lpsw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="lpsw" id="lpsw" required>
+        <div id="log_error"></div>
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" id="close_login">Close</button>
+      </form>
+    </div>
+  </div>
   <script src = "/ppsingle/navigation.js"></script>
-  <!-- <script id = "view_script"></script> -->
+  <div id = "content"></div>
+
   
 </body>
 </html>

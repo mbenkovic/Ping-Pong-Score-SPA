@@ -31,12 +31,13 @@ $(document).ready(function () {
     dataType: "json"
   });
 
-  document.querySelector(".play_button").addEventListener("click", function (e) {
+  document.querySelector("#single_game").addEventListener("click", function (e) {
     let id1 = $('#choice_p1_game').select2('data')[0].id;
     let id2 = $('#choice_p2_game').select2('data')[0].id;
     if (id1 === id2) {
       alert('Choose different players!');
     } else {
+      document.querySelector(".home_box_rules").style.display = "block";
       document.querySelector(".home_box").style.display = "none";
       document.querySelector("#game").style.display = "block";
 
@@ -214,6 +215,64 @@ $(document).ready(function () {
       document.body.addEventListener("keyup", function (e) {
         keys[e.keyCode] = false;
       });
+    }
+  });
+
+  // document.querySelector("#navbar").addEventListener("click", function (e)  {
+  //   var messageJSON = {
+  //     chat_user: sessionStorage.getItem("user"),
+  //     chat_message: ' has disconnected!',
+  //     conn : 'shut'
+  //   };
+  //   conn.send(JSON.stringify(messageJSON));
+  //   document.getElementById("login").style.display = "block";
+  //   document.getElementById("rooms").style.display = "none";
+  //   document.getElementById("formChat").style.display = "none";
+  //   document.querySelector(".home_box").style.display = "block";
+  // });
+
+  document.querySelector("#create_room").addEventListener("click", function (e) {
+    $.ajax({
+      type: "POST",
+      url: "/ppsingle/ajax/actions.php",
+      data: {
+        'action': 'create_room',
+        'user'   : sessionStorage.getItem('user')
+      },
+      dataType: "json",
+      success: function (data) {
+        console.log(data);
+        connect(data);
+      }
+    });
+  });
+
+  document.querySelector("#join_room").addEventListener("click", function (e) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("rooms").style.display = "block";
+    document.querySelector(".home_box").style.display = "none";
+  });
+
+  $('.join_game').click(function() {
+    if(confirm('Da li sigurno želite pridružiti igri?'))
+    {
+      $.ajax({
+        type: "POST",
+        url: "/ppsingle/ajax/actions.php",
+        data: {
+          'port'         : $(this).val(),
+          'action'       : 'join_game'
+        },
+        dataType: "json",
+        success: function(data) {
+          console.log(data);
+          connect(data);
+        }
+      });
+      document.getElementById("login").style.display = "none";
+      document.getElementById("formChat").style.display = "block";
+      document.querySelector(".home_box").style.display = "none";
+      document.getElementById("rooms").style.display = "none";
     }
   })
 })

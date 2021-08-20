@@ -1,0 +1,52 @@
+[19-Aug-2021 11:55:39 Europe/Berlin] PHP Fatal error:  Uncaught RuntimeException: Failed to listen on "tcp://0.0.0.0:5357": Permission denied in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php:172
+Stack trace:
+#0 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct('tcp://0.0.0.0:5...', Object(React\EventLoop\StreamSelectLoop), Array)
+#1 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/cboden/ratchet/src/Ratchet/Server/IoServer.php(59): React\Socket\Server->__construct('0.0.0.0:5357', Object(React\EventLoop\StreamSelectLoop))
+#2 /mnt/c/Users/mario/Documents/www/ppsingle/bin/server.php(20): Ratchet\Server\IoServer::factory(Object(Ratchet\Http\HttpServer), '5357')
+#3 {main}
+  thrown in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php on line 172
+[19-Aug-2021 12:19:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::append() in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php:30
+Stack trace:
+#0 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/cboden/ratchet/src/Ratchet/WebSocket/WsServer.php(75): MyApp\Chat->onMessage(Object(Ratchet\WebSocket\WsConnection), '{"chat_user":"M...')
+#1 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/cboden/ratchet/src/Ratchet/WebSocket/WsServer.php(131): Ratchet\WebSocket\WsServer->Ratchet\WebSocket\{closure}(Object(Ratchet\WebSocket\WsConnection), Object(Ratchet\RFC6455\Messaging\Message))
+#2 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/ratchet/rfc6455/src/Messaging/MessageBuffer.php(248): Ratchet\WebSocket\WsServer->Ratchet\WebSocket\{closure}(Object(Ratchet\RFC6455\Messaging\Message), Object(Ratchet\RFC6455\Messaging\MessageBuffer))
+#3 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/ratchet/rfc6455/src/Messaging/MessageBuffer.php(194): Ratchet\RFC6455\Messaging\MessageBuffer->processData('\x81\xCDO$%\xC74\x06F\xAF.Pz\xB2<...') in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 30
+[19-Aug-2021 12:37:46 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 130
+[19-Aug-2021 12:37:46 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 132
+[19-Aug-2021 12:37:51 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 130
+[19-Aug-2021 12:37:51 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 132
+[19-Aug-2021 12:37:53 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 130
+[19-Aug-2021 12:37:53 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /mnt/c/Users/mario/Documents/www/ppsingle/models/Player.php on line 132
+[20-Aug-2021 10:03:43 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:10:45 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:11:02 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 62
+[20-Aug-2021 10:15:49 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:17:02 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 65
+[20-Aug-2021 10:17:04 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:17:04 Europe/Berlin] PHP Recoverable fatal error:  Object of class Ratchet\WebSocket\WsConnection could not be converted to string in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 40
+[20-Aug-2021 10:19:02 Europe/Berlin] PHP Notice:  Undefined variable: port in /mnt/c/Users/mario/Documents/www/ppsingle/bin/server.php on line 20
+[20-Aug-2021 10:19:02 Europe/Berlin] PHP Fatal error:  Uncaught InvalidArgumentException: Invalid URI "tcp://0.0.0.0:" given in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php:157
+Stack trace:
+#0 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct('tcp://0.0.0.0:', Object(React\EventLoop\StreamSelectLoop), Array)
+#1 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/cboden/ratchet/src/Ratchet/Server/IoServer.php(59): React\Socket\Server->__construct('0.0.0.0:', Object(React\EventLoop\StreamSelectLoop))
+#2 /mnt/c/Users/mario/Documents/www/ppsingle/bin/server.php(20): Ratchet\Server\IoServer::factory(Object(Ratchet\Http\HttpServer), NULL)
+#3 {main}
+  thrown in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php on line 157
+[20-Aug-2021 10:19:25 Europe/Berlin] PHP Notice:  Undefined variable: port in /mnt/c/Users/mario/Documents/www/ppsingle/bin/server.php on line 20
+[20-Aug-2021 10:19:25 Europe/Berlin] PHP Fatal error:  Uncaught InvalidArgumentException: Invalid URI "tcp://0.0.0.0:" given in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php:157
+Stack trace:
+#0 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/Server.php(77): React\Socket\TcpServer->__construct('tcp://0.0.0.0:', Object(React\EventLoop\StreamSelectLoop), Array)
+#1 /mnt/c/Users/mario/Documents/www/ppsingle/vendor/cboden/ratchet/src/Ratchet/Server/IoServer.php(59): React\Socket\Server->__construct('0.0.0.0:', Object(React\EventLoop\StreamSelectLoop))
+#2 /mnt/c/Users/mario/Documents/www/ppsingle/bin/server.php(20): Ratchet\Server\IoServer::factory(Object(Ratchet\Http\HttpServer), NULL)
+#3 {main}
+  thrown in /mnt/c/Users/mario/Documents/www/ppsingle/vendor/react/socket/src/TcpServer.php on line 157
+[20-Aug-2021 10:19:59 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:21:09 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:21:09 Europe/Berlin] PHP Recoverable fatal error:  Object of class Ratchet\WebSocket\WsConnection could not be converted to string in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 40
+[20-Aug-2021 10:22:04 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:22:04 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 40
+[20-Aug-2021 10:23:46 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 10:23:46 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 40
+[20-Aug-2021 10:26:22 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 65
+[20-Aug-2021 11:00:25 Europe/Berlin] PHP Warning:  Illegal offset type in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 38
+[20-Aug-2021 11:00:25 Europe/Berlin] PHP Recoverable fatal error:  Object of class Ratchet\WebSocket\WsConnection could not be converted to string in /mnt/c/Users/mario/Documents/www/ppsingle/src/Chat.php on line 40
