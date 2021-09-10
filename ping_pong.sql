@@ -36,7 +36,7 @@ CREATE TABLE `games_played` (
   `p2_score` int NOT NULL,
   `date_played` datetime NOT NULL,
   `winner_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `games_played`
@@ -64,7 +64,7 @@ CREATE TABLE `players` (
   `prezime` varchar(256) NOT NULL,
   `datum_rodenja` date NOT NULL,
   `is_deleted` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `players`
