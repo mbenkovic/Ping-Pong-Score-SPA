@@ -2,7 +2,7 @@
 // let add_modal = document.getElementById("add_modal");
 // let add_btn = document.getElementById("add");
 // let add_close = document.getElementsByClassName("add_close")[0];
-
+let a = 0;
 document.getElementById("add").onclick = function() {
   document.getElementById("add_modal").style.display = "block";
 }
